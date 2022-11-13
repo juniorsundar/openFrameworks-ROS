@@ -9,6 +9,11 @@
 #       (default) OF_ROOT = ../../.. 
 ################################################################################
 # OF_ROOT = /home/juniorsundar/Documents/Casual_Works/codes/OF
+
+# MAKE SURE THAT THE ROS WORKSPACE IS SOURCED FIRST WITH
+# > cd <catkin_ws>
+# > source devel/setup.bash
+#! THIS ONLY WORKS WITH BASH, DO NOT TRY WITH ZSH
 export LD_LIBRARY_PATH := $(LD_LIBRARY_PATH):/opt/ros/noetic/lib:/usr/lib
 export PKG_CONFIG_PATH := $(PKG_CONFIG_PATH):/opt/ros/noetic/lib/pkgconfig:/usr/lib/pkgconfig
 
