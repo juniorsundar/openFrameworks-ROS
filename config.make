@@ -8,7 +8,7 @@
 #   The location of your root openFrameworks installation
 #       (default) OF_ROOT = ../../.. 
 ################################################################################
-# OF_ROOT = /home/juniorsundar/Documents/Casual_Works/codes/OF
+# OF_ROOT = 
 
 # MAKE SURE THAT THE ROS WORKSPACE IS SOURCED FIRST WITH
 # > cd <catkin_ws>
@@ -83,6 +83,7 @@ export PKG_CONFIG_PATH := $(PKG_CONFIG_PATH):/opt/ros/noetic/lib/pkgconfig:/usr/
 # incorporated directly into the final executable application binary.
 ################################################################################
 PROJECT_LDFLAGS=-Wl,-rpath=./libs
+# ADD ALL PERTINENT LIBRARIES TO THIS LIST
 ros_libs = $(shell pkg-config --libs roscpp sensor_msgs std_msgs cv_bridge)
 ros_libs_nocolon = $(subst -l:,,$(ros_libs))
 PROJECT_LDFLAGS+=$(SUBLIBS) $(ros_libs_nocolon) 
@@ -136,6 +137,8 @@ PROJECT_LDFLAGS+=$(SUBLIBS) $(ros_libs_nocolon)
 #
 #   Note: Leave a leading space when adding list items with the += operator
 ################################################################################
+
+# ADD ALL PERTINENT LIBRARIES TO THIS LIST. MUST MATCH THE LD_FLAGS FROM BEFORE
 PROJECT_OPTIMIZATION_CFLAGS_DEBUG = `pkg-config --cflags roscpp sensor_msgs std_msgs cv_bridge` -w -O2 
 PROJECT_OPTIMIZATION_CFLAGS_RELEASE = `pkg-config --cflags roscpp sensor_msgs std_msgs cv_bridge` -w -O2 
 
