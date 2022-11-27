@@ -2,12 +2,14 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+    ofBackground(0);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+  // Need this since of runs on its own loop
+  // Refer to ros::spinOnce() Documentation for more info
+    ros::spinOnce();
 }
 
 //--------------------------------------------------------------
