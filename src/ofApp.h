@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ros/ros.h"
 
 class ofApp : public ofBaseApp{
 
@@ -21,4 +22,16 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
 
+    // ROS variables
+    ros::NodeHandle nh;
+    
+    ofApp(int argc, char **argv){
+        this->argc = argc; this->argv = argv;
+        std::cout<<"initialised"<<std::endl;
+    };
+    ~ofApp(){};
+    
+private:
+    int argc;
+    char **argv;
 };
